@@ -1,7 +1,7 @@
 ---
 title: Data Management Plan for the Study _Do Reputable Open Access Journals Require
   Open Data Sharing?_
-author: "Gail Clement"
+author: "Neema Mduma"
 date: "August 9, 2018"
 output: slidy_presentation
 bibliography: oajournals.bib
