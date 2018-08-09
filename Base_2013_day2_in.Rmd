@@ -14,7 +14,9 @@ output:
     highlight: kate
     toc_depth: '2'
     
-  
+bibliography: 
+- oajournals.bib 
+- packages.bib
 ---
 
 *****
@@ -39,7 +41,7 @@ doaj_seal <- read_csv("data/DOAJ_Seal.csv")
 
 ```
 
-# Administrative Data
+# 1. Administrative Data
 
 ## ID
 
@@ -67,9 +69,9 @@ According to the [Research Data Alliance (RDA) Data Policy Standardisation and I
 
 This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles.
 
-Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, Vasilevsky et al, 2017 -- may be skewed because of the authors' rules of inclusion and exclusion (FN: in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals).
+Our investigation builds on the recent work of @Castro_2017 who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, @Vasilevsky_2017 -- may be skewed because of the authors' rules of inclusion and exclusion (FN: in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals).
 
-In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the ***Directory of Open Access Journals, DOAJ*** http://doaj.org (shown below). We will apply the same coding framework devised by Castro et al (2017) to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from Castro et al (2017)
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the ***Directory of Open Access Journals, DOAJ*** http://doaj.org (shown below). We will apply the same coding framework devised by @Castro_2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from @Castro_2017
 
 ![DOAJ Seal](images/doaj_seal_logo.png)
 
@@ -92,10 +94,10 @@ ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) +
 Finally, our research group has determined that following is true when it comes to reputable open access journals.
 
 
-||>
-Turn this into a code chunk
+```
 {r equations, child = "equations-child.Rmd"}
-<||
+
+```
 
 
 
@@ -122,7 +124,7 @@ The J. Bohannan Foundation adheres to the open access and data sharing policies 
 
 *****
 
-# Data Collection
+# 2. Data Collection
 
 ## Existing Data Being Reused
 
@@ -143,7 +145,7 @@ knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the D
 
 ## Data being collected
 
-The doaj_seal.csv data set currently includes over 1000 reputable open access journals that we will investigate in this study. The data set will be copied and enhanced with additional columns, resulting in the processed data set, `doaj_seal_enhanced.csv`. The following columns will be added to doaj_seal.csv, in conformance with the Coding Framework of Castro et al (2017).
+The doaj_seal.csv data set currently includes over 1000 reputable open access journals that we will investigate in this study. The data set will be copied and enhanced with additional columns, resulting in the processed data set, `doaj_seal_enhanced.csv`. The following columns will be added to doaj_seal.csv, in conformance with the Coding Framework of @Castro_2017.
 
 * 'Data Policy'  (Boolean)
     1. Yes
@@ -163,15 +165,15 @@ The doaj_seal.csv data set currently includes over 1000 reputable open access jo
     +Explicitly encouraged
         
     
-Investigators will examine the websites of each journal listed in the doaj_seal_enhanced.csv file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.
+Investigators will examine the websites of each journal listed in the doaj_seal_enhanced.csv file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by @Castro_2017 will be applied.
 
 ### Data file formats and standards
 
 All data retrieved for the DOAJ Seal of Approval are downloaded and stored in the open common separated value (csv) file format.
 
-All data policies culled from the web sites of the DOAJ seal journals will be saved as .txt files. The data generated by applying Castro et al's (2017) Coding Framework will be stored in csv file format.
+All data policies culled from the web sites of the DOAJ seal journals will be saved as .txt files. The data generated by applying @Castro_2017 Coding Framework will be stored in csv file format.
 
-Analysis, visualization, and summarization of the study's findings will be performed in the open source software R and RStudio using the tidyverse package (cite tidyverse package). Reports produced from the study will be also be created in RStudio using the open source text format Rmarkdown (cite rmarkdown package) and output to HTML documents, slides, and MS Word documents for submission to funders or publishers (cite Xie et al, 2018, RMarkdown guide from CRC) 
+Analysis, visualization, and summarization of the study's findings will be performed in the open source software R and RStudio using the tidyverse package (cite tidyverse package). Reports produced from the study will be also be created in RStudio using the open source text format Rmarkdown (cite rmarkdown package) and output to HTML documents, slides, and MS Word documents for submission to funders or publishers (cite @Xie_2018, RMarkdown guide from CRC) 
 
 All files associated with the project will be maintained under the Git version control system and made openly available for download from the Principal Investigator's GitHub repository.
 
@@ -198,7 +200,7 @@ ggplot(data=doaj, aes(doaj$JnlLicense, fill=doaj$JnlLicense)) + stat_count() + l
 ```
 
 
-# Documentation and Metadata
+# 3. Documentation and Metadata
 
 The journal metadata contained in the project's data sets comes directly from the Directory of Open Access Journals. 
 
@@ -206,7 +208,7 @@ The final outputs from the project will be documented in metadata files accordin
 
 *****
 
-# Ethics and Legal Compliance
+# 4. Ethics and Legal Compliance
 
 No additional ethical or privacy issues arise in this study because both the DOAJ data, and the information about data policies for any published journal, are publicly posted online.
 
@@ -215,24 +217,24 @@ The data provided about journals awarded the Directory of Open Access Journals S
 
 *****
 
-# Storage and Backup
+# 5. Storage and Backup
 
 During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at My Institution. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
 
 *****
 
-# Selection and long-term preservation
+# 6. Selection and long-term preservation
 
 ||> To be completed by the participants! <||
 
 ****
 
-# Data Sharing
+# 7. Data Sharing
 
 The data and metadata will be made openly accessible under a CC-BY SA license in the CERN-maintained open access repository Zenodo https://zenodo.org/, an open dependable home for the long-tail of science, enabling researchers to share and preserve any research outputs in any size, any format and from any science. (FN: Zenodo policies are available online at http://about.zenodo.org/policies/
 
 *****
-# Responsibilities and Resources
+# 8. Responsibilities and Resources
 
 The Principal Investigator is responsible for implementing the Data Management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using git and GitHub.
 
@@ -243,12 +245,15 @@ The Data Management Specialist assigned to the project as an in-kind contributio
 
 #### Complete dataset `doaj_seal.csv` {#annex-table}
 
-*This data table was compiled using the DT package by Xie (2018)*
+*This data table was compiled using the @R-DT package by @Xie_2018*
 
-||>
+```
 Turn this into a code chunk
 
 `{r data-table}
+
+```
+
 doaj_seal %>%
   datatable(rownames = FALSE, 
             colnames = c("Title", "Publisher", "Country", "Fees", "Waivers", "Identifiers", "Start Year", "Language(s)", "Review  Process", "Plagiarism check", "Time to Press", "License", "Author owns Copyright", "DOAJ Seal"),
@@ -271,16 +276,3 @@ This is auto-populated from your ORCID profile using the  rorcid package. (cite 
 
 # References
 
-Castro et al, 2017, blahblahblah
-
-Rmarkdown package citation of some kind, blahblahblah
-
-Vasilevsky et al, 2017, blahblahblah
-
-Tidyverse package citation of some kind, blahblahblah
-
-Rorcid package citation of some kind, blahblahblah
-
-Xie (2018), DT Table package, CRAN, blahblahblah
-
-Xie et al (2018) Markdown book published by CRC
